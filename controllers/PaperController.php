@@ -85,6 +85,41 @@ class PaperController extends Controller
       $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
+  private function outputPDF_Landscape($fileName, $content, $cssFilePath, $overrideConfig = [], $additionals = [], $watermark = "")
+  {
+
+    $margin_left = $overrideConfig['margin_left'] ?? null;
+    $margin_right = $overrideConfig['margin_right'] ?? null;
+    $margin_top = $overrideConfig['margin_top'] ?? null;
+    $margin_bottom = $overrideConfig['margin_bottom'] ?? null;
+
+      $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'L');
+  
+      $mpdf->showWatermarkText = true;
+      $mpdf->filename = $fileName . ".pdf";
+      $mpdf->title = $fileName;
+  
+      $customCssContent = $this->getBasePdfCss();
+      if (!empty($cssFilePath)) {
+          $customCssContent .= file_get_contents($cssFilePath);
+      }
+
+      if ($margin_left !== null) {
+        $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
+    }
+    if ($margin_right !== null) {
+        $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
+    }
+    if ($margin_top !== null) {
+        $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
+    }
+    if ($margin_bottom !== null) {
+        $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
+    }
+  
+      $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
+  }
+
 public function actionExamidcard()
   {
     $data = $this->dummyDataExamCard();
@@ -303,9 +338,34 @@ public function actionExamidcard()
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
+    $overrideConfig = [
+      'margin_left' => 40,
+      'margin_right' => 40,
+      'margin_top' => 20,
+  ];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+  }
+
+  public function actionSiyanuson_student_behave()
+  {
+    $data = $this->dummyDataSiyanuson_student_behave();
+    $html = $this->renderPartial('siyanuson_student_behave', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'รายงานความประพฤติรายบุคคล';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $overrideConfig = [
+      'margin_left' => 50,
+      'margin_right' => 50,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
+  ];
+
+    $this->outputPDF_Landscape($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
 
   private function dummyDataVisit()
@@ -1624,7 +1684,7 @@ return [
       ],
     ],
     'teacherCivilServantListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B',],
+      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
@@ -1632,7 +1692,7 @@ return [
       'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
     ],
     'permanentStaffListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B',],
+      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
@@ -1640,7 +1700,7 @@ return [
       'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
     ],
     'contractTeacherListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B',],
+      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
@@ -1648,13 +1708,281 @@ return [
       'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
     ],
     'temporaryStaffListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B',],
+      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'other'=> ['ตัวอย่าง A','ตัวอย่าง B'],
       'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
     ],
+      ];
+  }
+
+  private function dummyDataSiyanuson_student_behave()
+  {
+return [
+  'missing'=> [
+    'teamColor'=> 'แดง',
+    'id_num'=> '1',
+  ],
+  'register' => [
+    'date' => '2023-11-21',
+    'time' => '18:53',
+],
+'exam' => [
+    'date' => '2024-02-28',
+    'time' => '08:00',
+],
+'profile' => [
+    'regis_id' => 277561,
+    'seat_id' => '',
+    'edu_program' => 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
+    'gender' => 1,
+    'title' => 'น.ส.',
+    'firstname' => 'สุมลรัตน์',
+    'lastname' => 'ไขแจ้ง',
+    'mobile_no' => '0809652194',
+    'fullname' => 'น.ส. สุมลรัตน์ ไขแจ้ง',
+    'personal_id' => '1219901211901',
+    'race' => 'ไทย',
+    'nationality' => 'ไทย',
+    'religion' => 'พุทธ',
+    'dob' => '15 กันยายน 2551',
+    'height' => 162,
+    'weight' => 81,
+    'ageYear' => '15',
+    'ageMonth' => '6',
+    'blood' => 'O',
+    'email' => '13372@nikhomwit.ac.th',
+    'hospital' => 'N/A',
+    'born' => '-',
+    'mainLang' => 'N/A',
+    'graduate' => 'นิคมวิทยา',
+    'graduateSubDistrict' => 'นิคมพัฒนา',
+    'graduateDistrict' => 'นิคมพัฒนา',
+    'graduateProvince' => 'ระยอง',
+    'elderBrother' => '0',
+    'elderSister' => '0',
+    'youngerBrother' => '0',
+    'youngerSister' => '0',
+    'birthOrder' => 1,
+    'childInSchool' => '0',
+    'distance' => '5',
+    'travelDuration' => '9 นาที',
+    'travelCost' => '.',
+    'talent' => 'N/A',
+    'familyStatus' => 'บิดาถึงแก่กรรม',
+    'familyStatusNo' => 4,
+    'transport' => 'รถยนต์ส่วนบุคคล / Taxi',
+    'hasfee' => false,
+    'livingType' => 'N/A',
+    'siblings' => 0,
+],
+'address' => [
+    'no' => '288/2',
+    'moo' => '1',
+    'soi' => '2',
+    'street' => '-',
+    'sub_district' => 'นิคมพัฒนา',
+    'district' => 'นิคมพัฒนา',
+    'province' => 'ระยอง',
+    'zip' => '21180',
+    'tel' => '0809652194',
+],
+'dad' => [
+    'title' => 'นาย',
+    'f_name' => 'สุรชัย',
+    'l_name' => 'ไขแจ้ง',
+    'fullname' => 'นาย สุรชัย ไขแจ้ง',
+    'job' => 'ถึงแก่กรรม',
+    'phone' => '-',
+    'citizen' => '3640700385711',
+    'age' => 46,
+    'dob' => '23 กันยายน 2521',
+    'blood' => 'A',
+    'income' => '-',
+    'occupation' => 'ถึงแก่กรรม',
+    'nationality' => 'ไทย',
+    'race' => 'ไทย',
+    'religion' => 'พุทธ',
+],
+'mom' => [
+    'title' => 'นางสาว',
+    'f_name' => 'มลฤดี',
+    'l_name' => 'ทับจันทร์',
+    'fullname' => 'นางสาว มลฤดี ทับจันทร์',
+    'job' => 'รับราชการ',
+    'phone' => '0818631929',
+    'citizen' => '1210500078021',
+    'age' => 34,
+    'dob' => '28 สิงหาคม 2533',
+    'blood' => 'B',
+    'income' => '9,000',
+    'occupation' => 'รับราชการ',
+    'nationality' => 'ไทย',
+    'race' => 'ไทย',
+    'religion' => 'พุทธ',
+],
+'parent' => [
+    'title' => 'นางสาว',
+    'firstname' => 'มลฤดี',
+    'lastname' => 'ทับจันทร์',
+    'fullname' => 'นางสาว มลฤดี ทับจันทร์',
+    'age' => 34,
+    'job' => 'รับราชการ',
+    'phone' => '0818631929',
+    'citizen' => '1210500078021',
+    'blood' => 'B',
+    'income' => '9,000',
+    'occupation' => 'รับราชการ',
+    'patronize' => 'N/A',
+    'relative' => 'มารดา',
+    'relativeDad' => 'none',
+    'relativeMom' => true,
+    'relativeOther' => 'none',
+    'nationality' => 'ไทย',
+    'race' => 'ไทย',
+    'religion' => '-',
+],
+'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
+'title' => [
+    'name' => 'นิคมวิทยา',
+    'grade' => 4,
+    'year' => 2567,
+],
+    'teacherClass' => [
+      0 => [
+          'fullname' => 'นายธีระชัย เถลิงลาภ',
+      ],
+      1 => [
+          'fullname' => 'นายพรพล เทพไทยอำนวย',
+      ],
+      2 => [
+        'fullname' => '-',
+    ],
+      ],
+  'model' => [
+    'name' => 'ม.6/6',
+  ],
+  'behave' => [
+    0 => [
+    'created_at' => '2024-02-10 11:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ตัดคะแนน',
+    'handler' => 'นาย A',
+    'total_point' => 85.00,
+    'remark' => '1',
+  ],
+  1 => [
+    'created_at' => '2024-02-11 12:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'เชิญผู้ปกครอง',
+    'handler' => 'นาย B',
+    'total_point' => 70.00,
+    'remark' => '2',
+  ],
+  2 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  3 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  4 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  5 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  6 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  7 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  8 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  9 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  10 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  11 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+  12 => [
+    'created_at' => '2024-02-12 13:14:51',
+    'title' => '210ไม่บันทึกเวลามาโรงเรียน',
+    'point' => -15.00,
+    'progress' => 'ทำหนังสือยินยอม',
+    'handler' => 'นาย C',
+    'total_point' => 55.00,
+    'remark' => '3',
+  ],
+],
       ];
   }
 }

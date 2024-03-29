@@ -78,6 +78,9 @@ $this->title = 'My Yii Application';
 </div>
     <div class="col-lg-4 mb-3">
         <h2>In pull request</h2>
+        <?php echo Html::a('ศรียานุสร แก้ไขรายงานความประพฤติรายบุคคล', ['/paper/siyanuson_student_behave'], ['class' => 'btn btn-warning']); ?>&nbsp;
+<a class="btn btn-outline-secondary" href="https://t.nextschool.io/project/nextschool/issue/4429">Link Tree &raquo;</a>
+<br/><br/>
         <?php echo Html::a('บ้านบึง สรุปรายงานขาด ลา มาสายบุคลากร', ['/paper/banbueng_staff_attendance'], ['class' => 'btn btn-warning']); ?>&nbsp;
 <a class="btn btn-outline-secondary" href="https://t.nextschool.io/project/nextschool/issue/4369">Link Tree &raquo;</a>
 <br/><br/>
