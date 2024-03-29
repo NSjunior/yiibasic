@@ -24,157 +24,157 @@ $yearShort = $dateTimeParts1[2] + 43;
 <div style="padding-top:10px;">
 <table class="table table-sm">
       <tr>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
         ข้าราชการครู
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
         ลูกจ้างประจำ
         </td>
       </tr>
       <tr>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ข้าราชการครูทั้งหมด
         </td>
-        <td style="width:40px;padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="width:40px;padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['totalStaff']?>
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลูกจ้างประจำทั้งหมด
 </td>
-<td style="width:40px;padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="width:40px;padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['totalStaff']?>
 </td>
-<td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ไปราชการ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['onDutyService']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ไปราชการ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['onDutyService']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลาป่วย
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['sickLeave']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลาป่วย
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['sickLeave']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลากิจ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['personalLeave']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลากิจ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['personalLeave']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         มาสาย
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['late']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         มาสาย
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['late']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         อื่นๆ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $teacherCivilServant['other']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         อื่นๆ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $permanentStaff['other']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         รวมการมาปฎิบัติราชการ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         <?php echo $teacherCivilServant['totalPresent']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         รวมการมาปฎิบัติราชการ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 <?php echo $permanentStaff['totalPresent']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border:0px;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border:0px;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 คน
 </td>
       </tr>
     </table>
     </div>
 
-    <div style="float:left;width:50%;font-weight:bold;line-height:24px;padding-top:-12px;padding-left:5px;">
+    <div style="float:left;width:50%;font-weight:bold;line-height:22px;padding-top:-15px;padding-left:5px;">
 ไปราชการ:&nbsp;<?php foreach ($teacherCivilServantListName['onDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลาป่วย:&nbsp;<?php foreach ($teacherCivilServantListName['sickLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลากิจ:&nbsp;<?php foreach ($teacherCivilServantListName['personalLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
@@ -182,7 +182,7 @@ $yearShort = $dateTimeParts1[2] + 43;
 อื่นๆ:&nbsp;<?php foreach ($teacherCivilServantListName['other'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ช่วยราชการ:&nbsp;<?php foreach ($teacherCivilServantListName['helpDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?>
 </div>
-<div style="float:left;width:48.5%;font-weight:bold;line-height:24px;padding-top:-12px;padding-left:5px;">
+<div style="float:left;width:48.5%;font-weight:bold;line-height:22px;padding-top:-15px;padding-left:5px;">
 ไปราชการ:&nbsp;<?php foreach ($permanentStaffListName['onDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลาป่วย:&nbsp;<?php foreach ($permanentStaffListName['sickLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลากิจ:&nbsp;<?php foreach ($permanentStaffListName['personalLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
@@ -194,157 +194,157 @@ $yearShort = $dateTimeParts1[2] + 43;
 <div style="padding-top:10px;">
 <table class="table table-sm">
       <tr>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
         ครูอัตราจ้าง
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;border: 1px solid;font-size:16pt;background-color: #CEFFFF;" colspan="3">
         ลูกจ้างชั่วคราว
         </td>
       </tr>
       <tr>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ครูอัตราจ้างทั้งหมด
         </td>
-        <td style="padding-top:8px;width:40px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="padding-top:8px;width:40px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['totalStaff']?>
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลูกจ้างชั่วคราวทั้งหมด
 </td>
-<td style="padding-top:8px;width:40px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="padding-top:8px;width:40px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['totalStaff']?>
 </td>
-<td style="padding-top:8px;line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="padding-top:8px;line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ไปราชการ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['onDutyService']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ไปราชการ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['onDutyService']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลาป่วย
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['sickLeave']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลาป่วย
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['sickLeave']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลากิจ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['personalLeave']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         ลากิจ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['personalLeave']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         มาสาย
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['late']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         มาสาย
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['late']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         อื่นๆ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
         <?php echo $contractTeacher['other']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:left;font-size:16pt;border-left:1px solid;padding-left:7px;">
         อื่นๆ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;">
 <?php echo $temporaryStaff['other']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;">
 คน
 </td>
       </tr>
       <tr>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         รวมการมาปฎิบัติราชการ
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         <?php echo $contractTeacher['totalPresent']?>
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 คน
         </td>
-        <td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+        <td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-left:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
         รวมการมาปฎิบัติราชการ
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 <?php echo $temporaryStaff['totalPresent']?>
 </td>
-<td style="line-height:18px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border:0px;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
+<td style="line-height:16px;height:25px;font-weight:bold;text-align:center;font-size:16pt;border:0px;border-right:1px solid;border-bottom:1px solid;background-color:#D9D9D9;border-top:1px solid;">
 คน
 </td>
       </tr>
     </table>
     </div>
 
-    <div style="float:left;width:50%;font-weight:bold;line-height:24px;padding-top:-12px;padding-left:5px;">
+    <div style="float:left;width:50%;font-weight:bold;line-height:22px;padding-top:-15px;padding-left:5px;">
 ไปราชการ:&nbsp;<?php foreach ($contractTeacherListName['onDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลาป่วย:&nbsp;<?php foreach ($contractTeacherListName['sickLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลากิจ:&nbsp;<?php foreach ($contractTeacherListName['personalLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
@@ -352,7 +352,7 @@ $yearShort = $dateTimeParts1[2] + 43;
 อื่นๆ:&nbsp;<?php foreach ($contractTeacherListName['other'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ช่วยราชการ:&nbsp;<?php foreach ($contractTeacherListName['helpDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?>
 </div>
-<div style="float:left;width:48.5%;font-weight:bold;line-height:24px;padding-top:-12px;padding-left:5px;">
+<div style="float:left;width:48.5%;font-weight:bold;line-height:22px;padding-top:-15px;padding-left:5px;">
 ไปราชการ:&nbsp;<?php foreach ($temporaryStaffListName['onDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลาป่วย:&nbsp;<?php foreach ($temporaryStaffListName['sickLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
 ลากิจ:&nbsp;<?php foreach ($temporaryStaffListName['personalLeave'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?><br/>
@@ -361,13 +361,13 @@ $yearShort = $dateTimeParts1[2] + 43;
 ช่วยราชการ:&nbsp;<?php foreach ($temporaryStaffListName['helpDutyService'] as $index => $list){echo ($index + 1) . "." . $list . '&nbsp;&nbsp;';} ?>
 </div>
 
-<div style="float:left;width:50%;text-align:center;font-weight:bold;line-height:24px;padding-top:30px;">
+<div style="float:left;width:50%;text-align:center;font-weight:bold;line-height:22px;padding-top:20px;">
 ลงชื่อ...........................................................<br/>
 (<?php echo $deputyDirector['User']['title'] . $deputyDirector['User']['firstname'] . '&nbsp;&nbsp;&nbsp;' . $deputyDirector['User']['lastname'] ?>)<br/>
 รองผู้อำนวยการกลุ่มบริหารงานบุคคลและงบประมาณ<br/>
 <span style="color:blue;">(</span><span style="color:red;"><?php echo $dayShort . '&nbsp;' . $monthShort . '&nbsp;' . $yearShort ?></span><span style="color:blue;">)</span>
 </div>
-<div style="float:left;width:50%;text-align:center;font-weight:bold;line-height:24px;padding-top:30px;">
+<div style="float:left;width:50%;text-align:center;font-weight:bold;line-height:22px;padding-top:20px;">
 ลงชื่อ...........................................................<br/>
 (<?php echo $principal['User']['title'] . $principal['User']['firstname'] . '&nbsp;&nbsp;&nbsp;' . $principal['User']['lastname'] ?>)<br/>
 ผู้อำนวยการโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"<br/>
