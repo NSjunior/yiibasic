@@ -6,7 +6,7 @@ $modelName2 = $modelNameParts[1]; // 6/6
 ?>
 
 <?php
-$dataChunks = array_chunk($behave, 9);
+$dataChunks = array_chunk($behave, 10);
 $orderNum = 1;
 $chunkCount = count($dataChunks);
 foreach ($dataChunks as $index => $chunk) {
@@ -78,38 +78,38 @@ foreach ($dataChunks as $index => $chunk) {
 <div style="padding-top:10px;">
 <table class="table table-bordered table-sm table-collapse">
     <tr>
-      <th style="text-align:center;font-size:14pt;width:40px;border:1px solid;" rowspan="2">ครั้ง<br/>ที่</th>
-        <th style="text-align:center;font-size:14pt;width:150px;border:1px solid;" rowspan="2">ว.ด.ป.</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" rowspan="2">พฤติกรรมความผิด</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" rowspan="2">การดำเนินการ</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" rowspan="2">ผู้ดำเนินการ</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" colspan="2">คะแนนความประพฤติ(100)</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" rowspan="2">นักเรียน/ผู้ปกครอง<br/>ลงชื่อรับทราบ</th>
-        <th style="text-align:center;font-size:14pt;border:1px solid;" rowspan="2">หมายเหตุ</th>
+      <td style="line-height:20px;text-align:center;font-size:14pt;width:40px;border:1px solid;" rowspan="2">ครั้ง<br/>ที่</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;width:150px;border:1px solid;" rowspan="2">ว.ด.ป.</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" rowspan="2">พฤติกรรมความผิด</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" rowspan="2">การดำเนินการ</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" rowspan="2">ผู้ดำเนินการ</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" colspan="2">คะแนนความประพฤติ(100)</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" rowspan="2">นักเรียน/ผู้ปกครอง<br/>ลงชื่อรับทราบ</th>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;" rowspan="2">หมายเหตุ</th>
     </tr>
     <tr>
-      <th style="text-align:center;font-size:14pt;width:80px;border:1px solid;">ตัด:คะแนน</th>
-      <th style="text-align:center;font-size:14pt;width:80px;border:1px solid;">เหลือ:คะแนน</th>
+      <td style="line-height:20px;text-align:center;font-size:14pt;width:80px;border:1px solid;">ตัด:คะแนน</th>
+      <td style="line-height:20px;text-align:center;font-size:14pt;width:80px;border:1px solid;">เหลือ:คะแนน</th>
     </tr>
     <?php 
     foreach ($chunk as $item): ?>
     <tr>
   </tr>
     <tr>
-        <td style="text-align:center;font-size:14pt;border:1px solid;"><?php echo $orderNum; ?></td>
-        <td style="text-align:right;font-size:14pt;border:1px solid;"><?php $dateTime = $item['created_at'];
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;"><?php echo $orderNum; ?></td>
+        <td style="line-height:20px;text-align:right;font-size:14pt;border:1px solid;"><?php $dateTime = $item['created_at'];
         $timestamp = strtotime($dateTime);
         $thaiYear = date('Y', $timestamp) + 543;
         $formattedDatetime = Yii::$app->date->date('j F พ.ศ.', $timestamp) . ' ' . $thaiYear;
         echo $formattedDatetime;
         ?></td>
-        <td style="font-size:14pt;border:1px solid;"><?php echo $item['title']; ?></td>
-        <td style="font-size:14pt;border:1px solid;"><?php echo $item['progress']; ?></td>
-        <td style="font-size:14pt;border:1px solid;"><?php echo $item['handler']; ?></td>
-        <td style="text-align:right;font-size:14pt;border:1px solid;"><?php echo number_format($item['point'], 2); ?></td>
-        <td style="text-align:right;font-size:14pt;border:1px solid;"><?php echo number_format($item['total_point'], 2); ?></td>
-        <td style="font-size:14pt;border:1px solid;"></td>
-        <td style="text-align:center;font-size:14pt;border:1px solid;"><?php echo $item['remark']; ?></td>
+        <td style="line-height:20px;font-size:14pt;border:1px solid;"><?php echo $item['title']; ?></td>
+        <td style="line-height:20px;font-size:14pt;border:1px solid;"><?php echo $item['progress']; ?></td>
+        <td style="line-height:20px;font-size:14pt;border:1px solid;"><?php echo $item['handler']; ?></td>
+        <td style="line-height:20px;text-align:right;font-size:14pt;border:1px solid;"><?php echo number_format($item['point'], 2); ?></td>
+        <td style="line-height:20px;text-align:right;font-size:14pt;border:1px solid;"><?php echo number_format($item['total_point'], 2); ?></td>
+        <td style="line-height:20px;font-size:14pt;border:1px solid;"></td>
+        <td style="line-height:20px;text-align:center;font-size:14pt;border:1px solid;"><?php echo $item['remark']; ?></td>
     </tr>
     <?php $orderNum++; endforeach; ?>
 </table>
