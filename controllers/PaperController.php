@@ -361,7 +361,7 @@ public function actionExamidcard()
     $overrideConfig = [
       'margin_left' => 50,
       'margin_right' => 50,
-      'margin_top' => 40,
+      'margin_top' => 30,
       'margin_bottom' => 40,
   ];
 
@@ -1723,7 +1723,7 @@ return [
 return [
   'missing'=> [
     'teamColor'=> 'แดง',
-    'id_num'=> '1',
+    'studentNo'=> '10',
   ],
   'register' => [
     'date' => '2023-11-21',
@@ -1852,14 +1852,17 @@ return [
 ],
     'teacherClass' => [
       0 => [
-          'fullname' => 'นายธีระชัย เถลิงลาภ',
+        'teacherClassSinceYear'=> '2565',
+        'fullname' => 'นายธีระชัย เถลิงลาภ',
       ],
       1 => [
-          'fullname' => 'นายพรพล เทพไทยอำนวย',
+        'teacherClassSinceYear'=> '2566',
+        'fullname' => 'นายพรพล เทพไทยอำนวย',
       ],
       2 => [
-        'fullname' => '-',
-    ],
+        'teacherClassSinceYear'=> '2567',
+        'fullname' => 'นายพรพล เทพไทยอำนวย',
+      ],
       ],
   'model' => [
     'name' => 'ม.6/6',
