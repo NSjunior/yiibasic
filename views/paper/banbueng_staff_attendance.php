@@ -3,6 +3,7 @@ $dtime = \DateTime::createFromFormat("Y-m-d", date('Y-m-d'));
 $timestamp = $dtime->getTimestamp();
 $thaiYear = date('Y', $timestamp) + 543;
 $DateTime = Yii::$app->date->date('ประจำวันl ที่ j เดือน F พ.ศ. ', $timestamp) . $thaiYear;
+$DateTime1 = Yii::$app->date->date('j F ', $timestamp) . $thaiYear;
 
 $DateTimeShort = Yii::$app->date->date('j M y', $timestamp);
 $dateTimeParts1 = explode(' ', $DateTimeShort);
@@ -365,12 +366,12 @@ $yearShort = $dateTimeParts1[2] + 43;
 ลงชื่อ...........................................................<br/>
 (<?php echo $deputyDirector['User']['title'] . $deputyDirector['User']['firstname'] . '&nbsp;&nbsp;&nbsp;' . $deputyDirector['User']['lastname'] ?>)<br/>
 รองผู้อำนวยการกลุ่มบริหารงานบุคคลและงบประมาณ<br/>
-<span style="color:blue;">(</span><span style="color:red;"><?php echo $dayShort . '&nbsp;' . $monthShort . '&nbsp;' . $yearShort ?></span><span style="color:blue;">)</span>
+<span><?php echo '('. $DateTime1 . ')' ?></span>
 </div>
 <div style="float:left;width:50%;text-align:center;font-weight:bold;line-height:22px;padding-top:20px;">
 ลงชื่อ...........................................................<br/>
 (<?php echo $principal['User']['title'] . $principal['User']['firstname'] . '&nbsp;&nbsp;&nbsp;' . $principal['User']['lastname'] ?>)<br/>
 ผู้อำนวยการโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"<br/>
-<span style="color:blue;">(</span><span style="color:red;"><?php echo $dayShort . '&nbsp;' . $monthShort . '&nbsp;' . $yearShort ?></span><span style="color:blue;">)</span>
+<span><?php echo '('. $DateTime1 . ')' ?></span>
 </div>
     </div>
