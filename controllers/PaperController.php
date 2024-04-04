@@ -58,31 +58,31 @@ class PaperController extends Controller
     $margin_top = $overrideConfig['margin_top'] ?? null;
     $margin_bottom = $overrideConfig['margin_bottom'] ?? null;
 
-      $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'P');
-  
-      $mpdf->showWatermarkText = true;
-      $mpdf->filename = $fileName . ".pdf";
-      $mpdf->title = $fileName;
-  
-      $customCssContent = $this->getBasePdfCss();
-      if (!empty($cssFilePath)) {
-          $customCssContent .= file_get_contents($cssFilePath);
-      }
+    $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'P');
 
-      if ($margin_left !== null) {
-        $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
+    $mpdf->showWatermarkText = true;
+    $mpdf->filename = $fileName . ".pdf";
+    $mpdf->title = $fileName;
+
+    $customCssContent = $this->getBasePdfCss();
+    if (!empty($cssFilePath)) {
+      $customCssContent .= file_get_contents($cssFilePath);
+    }
+
+    if ($margin_left !== null) {
+      $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
     }
     if ($margin_right !== null) {
-        $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
+      $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
     }
     if ($margin_top !== null) {
-        $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
+      $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
     }
     if ($margin_bottom !== null) {
-        $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
+      $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
     }
-  
-      $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
+
+    $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
   private function outputPDF_Landscape($fileName, $content, $cssFilePath, $overrideConfig = [], $additionals = [], $watermark = "")
@@ -93,34 +93,34 @@ class PaperController extends Controller
     $margin_top = $overrideConfig['margin_top'] ?? null;
     $margin_bottom = $overrideConfig['margin_bottom'] ?? null;
 
-      $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'L');
-  
-      $mpdf->showWatermarkText = true;
-      $mpdf->filename = $fileName . ".pdf";
-      $mpdf->title = $fileName;
-  
-      $customCssContent = $this->getBasePdfCss();
-      if (!empty($cssFilePath)) {
-          $customCssContent .= file_get_contents($cssFilePath);
-      }
+    $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'L');
 
-      if ($margin_left !== null) {
-        $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
+    $mpdf->showWatermarkText = true;
+    $mpdf->filename = $fileName . ".pdf";
+    $mpdf->title = $fileName;
+
+    $customCssContent = $this->getBasePdfCss();
+    if (!empty($cssFilePath)) {
+      $customCssContent .= file_get_contents($cssFilePath);
+    }
+
+    if ($margin_left !== null) {
+      $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
     }
     if ($margin_right !== null) {
-        $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
+      $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
     }
     if ($margin_top !== null) {
-        $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
+      $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
     }
     if ($margin_bottom !== null) {
-        $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
+      $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
     }
-  
-      $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
+
+    $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
-public function actionExamidcard()
+  public function actionExamidcard()
   {
     $data = $this->dummyDataExamCard();
     $html = $this->renderPartial('examidcard', [...$data]);
@@ -202,23 +202,23 @@ public function actionExamidcard()
 
   public function actionPutthaisong_transcript5()
   {
-      $data = $this->dummyDataTranscript();
-      $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
-  
-      $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-  
-      $fileName = 'bp5-eva-cover';
-      $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-      $additionals = [];
-  
-      $overrideConfig = [
-        'margin_left' => 80,
-        'margin_right' => 20,
-        'margin_top' => 40,
-        'margin_bottom' => 40,
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName = 'bp5-eva-cover';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $overrideConfig = [
+      'margin_left' => 80,
+      'margin_right' => 20,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
     ];
-  
-      $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
 
   public function actionPutthaisong_transcript_eva()
@@ -237,7 +237,7 @@ public function actionExamidcard()
       'margin_right' => 20,
       'margin_top' => 40,
       'margin_bottom' => 40,
-  ];
+    ];
 
     $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
@@ -258,7 +258,7 @@ public function actionExamidcard()
       'margin_right' => 20,
       'margin_top' => 40,
       'margin_bottom' => 40,
-  ];
+    ];
 
     $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
@@ -342,7 +342,7 @@ public function actionExamidcard()
       'margin_left' => 40,
       'margin_right' => 40,
       'margin_top' => 20,
-  ];
+    ];
 
     $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
@@ -363,7 +363,7 @@ public function actionExamidcard()
       'margin_right' => 50,
       'margin_top' => 30,
       'margin_bottom' => 40,
-  ];
+    ];
 
     $this->outputPDF_Landscape($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
@@ -371,60 +371,60 @@ public function actionExamidcard()
   private function dummyDataVisit()
   {
     return [
-      'missing'=> [
-      'parent_remark' => 'ดี เอื้อต่อการดำรงชีวิต',
-      'living_environment' => 'ดี เอื้อต่อการดำรงชีวิต',
-      'environmentDetail' => '',
-      'family_care' => 'ครอบครัวเอาใจใส่ ดูแลด้านพฤติกรรมและการเรียน',
-      'student_no'=> '1',
-      'totalFamilyMember'=> 5,
-      'familyMemberMale'=> 2,
-      'familyMemberFemale'=> 3,
-      'bloodRelatedSibling'=> 2,
-      'bloodRelatedSon'=> 1,
-      'bloodRelatedDaughter'=> 1,
-      'nonBloodRelatedSibling'=> 1,
-      'nonBloodRelatedSon'=> 0,
-      'nonBloodRelatedDaughter'=> 1,
-      'familyMemberNeedHelp'=> 1,
-      'home_kind'=> 'บ้านของตัวเอง',
-      'home_tidy'=> 'สกปรกไม่มีระเบียบ',
-      'hasElectricity'=> false,
-      'hasWater'=> false,
-      'hasBathroom'=> true,
-      'familyRelationship'=> 'อื่นๆ',
-      'relationshipWithDad'=> 'ขัดแย้ง',
-      'relationshipWithMom'=> 'ห่างเหิน',
-      'relationshipWithBrother'=> 'เฉยๆ',
-      'relationshipWithSister'=> 'สนิทสนม',
-      'relationshipWithElder'=> 'เฉยๆ',
-      'relationshipWithRelative'=> 'ห่างเหิน',
-      'relationshipWithOther'=> 'ไม่มี',
-      'hobby'=> 'ดูทีวี/ฟังเพลง',
-      'hobbyChoice'=> ['ดูทีวี/ฟังเพลง', 'อ่านหนังสือ', 'แว้น/สก๊อย', 'ไปสวนสาธารณะ', 'อื่นๆ', 'ไปเที่ยวห้าง/ดูหนัง', 'ไปหาเพื่อน/เพื่อน', 'เล่นเกม คอมพิวเตอร์/มือถือ', 'เล่นดนตรี'],
-      'whenParentNotHome'=> 'ป้า',
-      'getLivingCostFrom'=> 'พ่อ',
-      'studentPartTime'=> 'พนักงานเสริฟร้านอาหาร',
-      'studentPartTimeIncome'=> '10,500',
-      'studentGetMoney'=> '150',
-      'studentHealth' => ['สมรรถภาพทางกายต่ำ', 'ร่างกายไม่แข็งแรง' ],
-      'studentSafety' => ['มีความขัดแย้ง/ทะเลาะกันในครอบครัว', 'ถูกล่วงละเมิดทางเพศ'],
-      'drugBehavior' => ['คบเพื่อนในกลุ่มที่ใช้สารเสพติด','อยู่ในสภาพแวดล้อมที่ใช้สารเสพติด','เป็นผู้ติดบุหรี่ สุรา หรือการใช้สารเสพติดอื่นๆ','สมาชิกในครอบครัวข้องเกี่ยวกับสารเสพติด','ปัจจุบันเกี่ยวข้องกับสารเสพติด'],
-      'sexualBehavior' => ['อยู่ในกลุ่มขายบริการ','ขายบริการทางเพศ','มีการมั่วสุมทางเพศ','ใช้เครื่องมือสื่อสารที่เกี่ยวข้องกับด้านเพศเป็นเวลานานและบ่อยครั้ง','หมกมุ่นในการใช้เครื่องมือสื่อสารที่เกี่ยวข้องทางเพศ','ตั้งครรภ์'],
-      'gameAddictive' => ['เล่นเกมเกินวันละ 1 ชั่วโมง','เก็บตัว แยกตัวจากกลุ่มเพื่อน','อยู่ในกลุ่มเพื่อนติดเกม','เล่นเกมเกินวันละ 2 ชั่วโมง','ใช้เงินสิ้นเปลือง โกหก ลักขโมยเงินเพื่อเล่นเกม','ขาดจินตนาการและความคิดสร้างสรรค์','ใช่จ่ายเงินผิดปกติ','ร้านเกมอยู่ใกล้บ้านหรือโรงเรียน','หมกมุ่น จริงจังในการเล่นเกม','อื่นๆ'],
-      'computerInternetAccessible'=> false,
-      'socialMediaAddictive' => 'ใช้โซเชียลมีเดีย/เกม (ไม่เกินวันละ 3 ชั่วโมง)',
-      'line_id'=> '123',
-      'need_assist'=> 'ไม่จำเป็น',
-      'assist'=> 'ด้านเศรษฐกิจ',
-      'facebook'=> '321',
-      'visit_count'=> 1,
-      'beingTogether'=> '6 ชั่วโมง',
-      'studentViolent'=> ['มีการทะเลาะวิวาท','ก้าวร้าว เกเร','ทะเลาะวิวาทเป็นประจำ','ทำร้ายร่างกายผู้อื่น','ทำร้ายร่างกายตนเอง','อื่นๆ'],
-      'student_responsibility'=> 'ช่วยงานบ้าน',
-      'student_responsibilityChoice'=> ['ช่วยงานบ้าน', 'ช่วยค้าขายเล็กๆน้อยๆ', 'ช่วยงานในนาไร่', 'ช่วยดูแลคนเจ็บป่วย/พิการ', 'ทำงานพิเศษแถวบ้าน', 'อื่นๆ'],
-      'nickname'=> 'เจม',
-      'method' => ['ผู้ปกครองมาส่ง', 'รถโดยสารประจำทาง', 'รถจักรยานยนต์', 'รถยนต์', 'รถจักรยาน', 'รถโรงเรียน', 'เดิน','อื่นๆ'],
+      'missing' => [
+        'parent_remark' => 'ดี เอื้อต่อการดำรงชีวิต',
+        'living_environment' => 'ดี เอื้อต่อการดำรงชีวิต',
+        'environmentDetail' => '',
+        'family_care' => 'ครอบครัวเอาใจใส่ ดูแลด้านพฤติกรรมและการเรียน',
+        'student_no' => '1',
+        'totalFamilyMember' => 5,
+        'familyMemberMale' => 2,
+        'familyMemberFemale' => 3,
+        'bloodRelatedSibling' => 2,
+        'bloodRelatedSon' => 1,
+        'bloodRelatedDaughter' => 1,
+        'nonBloodRelatedSibling' => 1,
+        'nonBloodRelatedSon' => 0,
+        'nonBloodRelatedDaughter' => 1,
+        'familyMemberNeedHelp' => 1,
+        'home_kind' => 'บ้านของตัวเอง',
+        'home_tidy' => 'สกปรกไม่มีระเบียบ',
+        'hasElectricity' => false,
+        'hasWater' => false,
+        'hasBathroom' => true,
+        'familyRelationship' => 'อื่นๆ',
+        'relationshipWithDad' => 'ขัดแย้ง',
+        'relationshipWithMom' => 'ห่างเหิน',
+        'relationshipWithBrother' => 'เฉยๆ',
+        'relationshipWithSister' => 'สนิทสนม',
+        'relationshipWithElder' => 'เฉยๆ',
+        'relationshipWithRelative' => 'ห่างเหิน',
+        'relationshipWithOther' => 'ไม่มี',
+        'hobby' => 'ดูทีวี/ฟังเพลง',
+        'hobbyChoice' => ['ดูทีวี/ฟังเพลง', 'อ่านหนังสือ', 'แว้น/สก๊อย', 'ไปสวนสาธารณะ', 'อื่นๆ', 'ไปเที่ยวห้าง/ดูหนัง', 'ไปหาเพื่อน/เพื่อน', 'เล่นเกม คอมพิวเตอร์/มือถือ', 'เล่นดนตรี'],
+        'whenParentNotHome' => 'ป้า',
+        'getLivingCostFrom' => 'พ่อ',
+        'studentPartTime' => 'พนักงานเสริฟร้านอาหาร',
+        'studentPartTimeIncome' => '10,500',
+        'studentGetMoney' => '150',
+        'studentHealth' => ['สมรรถภาพทางกายต่ำ', 'ร่างกายไม่แข็งแรง'],
+        'studentSafety' => ['มีความขัดแย้ง/ทะเลาะกันในครอบครัว', 'ถูกล่วงละเมิดทางเพศ'],
+        'drugBehavior' => ['คบเพื่อนในกลุ่มที่ใช้สารเสพติด', 'อยู่ในสภาพแวดล้อมที่ใช้สารเสพติด', 'เป็นผู้ติดบุหรี่ สุรา หรือการใช้สารเสพติดอื่นๆ', 'สมาชิกในครอบครัวข้องเกี่ยวกับสารเสพติด', 'ปัจจุบันเกี่ยวข้องกับสารเสพติด'],
+        'sexualBehavior' => ['อยู่ในกลุ่มขายบริการ', 'ขายบริการทางเพศ', 'มีการมั่วสุมทางเพศ', 'ใช้เครื่องมือสื่อสารที่เกี่ยวข้องกับด้านเพศเป็นเวลานานและบ่อยครั้ง', 'หมกมุ่นในการใช้เครื่องมือสื่อสารที่เกี่ยวข้องทางเพศ', 'ตั้งครรภ์'],
+        'gameAddictive' => ['เล่นเกมเกินวันละ 1 ชั่วโมง', 'เก็บตัว แยกตัวจากกลุ่มเพื่อน', 'อยู่ในกลุ่มเพื่อนติดเกม', 'เล่นเกมเกินวันละ 2 ชั่วโมง', 'ใช้เงินสิ้นเปลือง โกหก ลักขโมยเงินเพื่อเล่นเกม', 'ขาดจินตนาการและความคิดสร้างสรรค์', 'ใช่จ่ายเงินผิดปกติ', 'ร้านเกมอยู่ใกล้บ้านหรือโรงเรียน', 'หมกมุ่น จริงจังในการเล่นเกม', 'อื่นๆ'],
+        'computerInternetAccessible' => false,
+        'socialMediaAddictive' => 'ใช้โซเชียลมีเดีย/เกม (ไม่เกินวันละ 3 ชั่วโมง)',
+        'line_id' => '123',
+        'need_assist' => 'ไม่จำเป็น',
+        'assist' => 'ด้านเศรษฐกิจ',
+        'facebook' => '321',
+        'visit_count' => 1,
+        'beingTogether' => '6 ชั่วโมง',
+        'studentViolent' => ['มีการทะเลาะวิวาท', 'ก้าวร้าว เกเร', 'ทะเลาะวิวาทเป็นประจำ', 'ทำร้ายร่างกายผู้อื่น', 'ทำร้ายร่างกายตนเอง', 'อื่นๆ'],
+        'student_responsibility' => 'ช่วยงานบ้าน',
+        'student_responsibilityChoice' => ['ช่วยงานบ้าน', 'ช่วยค้าขายเล็กๆน้อยๆ', 'ช่วยงานในนาไร่', 'ช่วยดูแลคนเจ็บป่วย/พิการ', 'ทำงานพิเศษแถวบ้าน', 'อื่นๆ'],
+        'nickname' => 'เจม',
+        'method' => ['ผู้ปกครองมาส่ง', 'รถโดยสารประจำทาง', 'รถจักรยานยนต์', 'รถยนต์', 'รถจักรยาน', 'รถโรงเรียน', 'เดิน', 'อื่นๆ'],
       ],
       'profile' => [
         'regis_id' => 293048,
@@ -539,7 +539,7 @@ public function actionExamidcard()
       ],
       'semester' => [
         'name' => 'ภาคเรียนที่ 2',
-    ],
+      ],
       'model' => [
         'name' => 'ม.2/6',
         'date' => '2024-02-10',
@@ -562,8 +562,8 @@ public function actionExamidcard()
       ],
       'VisitInfoFiles' => [
         'path' => [
-          'image1'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
-          'image2'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+          'image1' => 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+          'image2' => 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
         ]
       ],
     ];
@@ -572,35 +572,35 @@ public function actionExamidcard()
   private function dummyDataVisitBodinSum()
   {
     return [
-      'missing'=> [
-      'totalStudent' => 36,
-      'totalMaleStudent' => 14,
-      'totalFemaleStudent' => 12,
-      'student_home_condition_good' => 20,
-      'student_home_condition_normal' => 13,
-      'student_home_condition_bad' => 0,
-      'student_living_environment_good' => 20,
-      'student_living_environment_normal' => 16,
-      'student_relationship_level_close' => 0,
-      'student_relationship_level_care' => 36,
-      'student_relationship_level_let_free' => 0,
-      'student_family_care_close' => 36,
-      'student_family_care_care' => 0,
-      'student_family_care_let_free' => 0,
-      'totalVisitStudent' => 36,
-      'totalNonVisitStudent' => 0,
+      'missing' => [
+        'totalStudent' => 36,
+        'totalMaleStudent' => 14,
+        'totalFemaleStudent' => 12,
+        'student_home_condition_good' => 20,
+        'student_home_condition_normal' => 13,
+        'student_home_condition_bad' => 0,
+        'student_living_environment_good' => 20,
+        'student_living_environment_normal' => 16,
+        'student_relationship_level_close' => 0,
+        'student_relationship_level_care' => 36,
+        'student_relationship_level_let_free' => 0,
+        'student_family_care_close' => 36,
+        'student_family_care_care' => 0,
+        'student_family_care_let_free' => 0,
+        'totalVisitStudent' => 36,
+        'totalNonVisitStudent' => 0,
       ],
       'teacherClass' => [
-          0 => [
-              'fullname' => 'นายธีระชัย เถลิงลาภ',
-          ],
-          1 => [
-              'fullname' => 'นายพรพล เทพไทยอำนวย',
-          ],
-          2 => [
-            'fullname' => '',
+        0 => [
+          'fullname' => 'นายธีระชัย เถลิงลาภ',
         ],
-          ],
+        1 => [
+          'fullname' => 'นายพรพล เทพไทยอำนวย',
+        ],
+        2 => [
+          'fullname' => '',
+        ],
+      ],
       'model' => [
         'name' => 'ม.6/6',
       ],
@@ -792,7 +792,7 @@ public function actionExamidcard()
   private function dummyDataExamCard()
   {
     return [
-        'profile' => [
+      'profile' => [
         'title' => 'นางสาว',
         'firstname' => 'ณิชา',
         'lastname' => 'ทีแคส',
@@ -800,70 +800,70 @@ public function actionExamidcard()
         'personal_id' => '1505200012123',
         'grade' => 1,
         'year' => 2567,
-        ],
-        'register_number' => '01388',
-        'targets' => [
-            0 => 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
-        ],
-        'old_school' => [
-            'name' => 'เมืองใหม่(ชลอราษฎร์รังสฤษฏ์)',
-            'sub_district' => 'เขาสามยอด',
-            'district' => 'เมืองลพบุรี',
-            'province' => 'ลพบุรี',
-            'type' => 'ค้นหา',
-        ],
-        'dad' => [
-            'fullname' => 'นาย ทศพล ศิริคูหาสมบูรณ์',
-            'occupation' => 'รับจ้าง',
-            'mobile_no' => '0928066647',
-        ],
-        'mom' => [
-            'fullname' => 'นางสาว ยุภา คำวิเศษ',
-            'occupation' => 'รับจ้าง',
-            'mobile_no' => '0998104766',
-        ],
-        'parent' => [
-            'fullname' => 'นางสาว อรพรรณ คำยันต์',
-            'occupation' => 'รับราชการ',
-            'mobile_no' => '0909098146',
-            'relation' => 'ป้า',
-        ],
-        'homeown' => [
-            'fullname' => '-',
-            'occupation' => '-',
-            'mobile_no' => '-',
-        ],
-        'registrant' => [
-            'image' => '',
-        ],
-        'exam' => [
-            'datetime' => '2024-02-18 09:00:00',
-            'seat_name' => 'F6',
-            'location_name' => '232',
-        ],
-        ];
+      ],
+      'register_number' => '01388',
+      'targets' => [
+        0 => 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
+      ],
+      'old_school' => [
+        'name' => 'เมืองใหม่(ชลอราษฎร์รังสฤษฏ์)',
+        'sub_district' => 'เขาสามยอด',
+        'district' => 'เมืองลพบุรี',
+        'province' => 'ลพบุรี',
+        'type' => 'ค้นหา',
+      ],
+      'dad' => [
+        'fullname' => 'นาย ทศพล ศิริคูหาสมบูรณ์',
+        'occupation' => 'รับจ้าง',
+        'mobile_no' => '0928066647',
+      ],
+      'mom' => [
+        'fullname' => 'นางสาว ยุภา คำวิเศษ',
+        'occupation' => 'รับจ้าง',
+        'mobile_no' => '0998104766',
+      ],
+      'parent' => [
+        'fullname' => 'นางสาว อรพรรณ คำยันต์',
+        'occupation' => 'รับราชการ',
+        'mobile_no' => '0909098146',
+        'relation' => 'ป้า',
+      ],
+      'homeown' => [
+        'fullname' => '-',
+        'occupation' => '-',
+        'mobile_no' => '-',
+      ],
+      'registrant' => [
+        'image' => '',
+      ],
+      'exam' => [
+        'datetime' => '2024-02-18 09:00:00',
+        'seat_name' => 'F6',
+        'location_name' => '232',
+      ],
+    ];
   }
 
   private function dummyDataNikomwitthaya()
   {
     return [
       'dataNikom' => [
-      'semester' => '2',
-            'year' => '2566',
-            'name' => 'เด็กชายกิตติธัช สนืทราษฎร์',
-            'studentid' => '13980',
-            'classroom' => 'ม.1/1',
-            'qr' => '099400026587500-13980-101-200000',
-            'codabar' => '099400026587500-13980-101-200000',
-            'educational_fees1' => '2,000.00',
-            'educational_fees2' => '300.00',
-            'educational_fees3' => '350.00',
-            'educational_fees4' => '500.00',
-            'educational_fees5' => '200.00',
-            'total_text' => 'สามพันสามร้อยห้าสอบบาทถ้วน',
-            'total' => '3,350.00',
-            'product_code' => '80771',
-            'classroom_no' => '101',
+        'semester' => '2',
+        'year' => '2566',
+        'name' => 'เด็กชายกิตติธัช สนืทราษฎร์',
+        'studentid' => '13980',
+        'classroom' => 'ม.1/1',
+        'qr' => '099400026587500-13980-101-200000',
+        'codabar' => '099400026587500-13980-101-200000',
+        'educational_fees1' => '2,000.00',
+        'educational_fees2' => '300.00',
+        'educational_fees3' => '350.00',
+        'educational_fees4' => '500.00',
+        'educational_fees5' => '200.00',
+        'total_text' => 'สามพันสามร้อยห้าสอบบาทถ้วน',
+        'total' => '3,350.00',
+        'product_code' => '80771',
+        'classroom_no' => '101',
       ],
     ];
   }
@@ -878,257 +878,257 @@ public function actionExamidcard()
         'subject' => 'ภาษาไทยพื้นฐาน',
         'course_code' => 'ส23103',
       ],
-    'model' => [
-      'name' => 'ม.6/6',
-    ],
-    'ranges' => [
-      0 => [
+      'model' => [
+        'name' => 'ม.6/6',
+      ],
+      'ranges' => [
+        0 => [
           'name' => '4',
           'range_max' => 100,
           'range_min' => 80,
           'count' => 7,
           'ratio' => 19.44,
-      ],
-      1 => [
+        ],
+        1 => [
           'name' => '3.5',
           'range_max' => 79.99999,
           'range_min' => 75,
           'count' => 7,
           'ratio' => 19.44,
-      ],
-      2 => [
+        ],
+        2 => [
           'name' => '3',
           'range_max' => 74.99,
           'range_min' => 70,
           'count' => 7,
           'ratio' => 19.44,
-      ],
-      3 => [
+        ],
+        3 => [
           'name' => '2.5',
           'range_max' => 69.99,
           'range_min' => 65,
           'count' => 4,
           'ratio' => 11.11,
-      ],
-      4 => [
+        ],
+        4 => [
           'name' => '2',
           'range_max' => 64.99,
           'range_min' => 60,
           'count' => 3,
           'ratio' => 8.33,
-      ],
-      5 => [
+        ],
+        5 => [
           'name' => '1.5',
           'range_max' => 59.99,
           'range_min' => 55,
           'count' => 0,
           'ratio' => 0,
-      ],
-      6 => [
+        ],
+        6 => [
           'name' => '1',
           'range_max' => 54.99,
           'range_min' => 50,
           'count' => 0,
           'ratio' => 0,
-      ],
-      7 => [
+        ],
+        7 => [
           'name' => '0',
           'range_max' => 49.99,
           'range_min' => 0,
           'count' => 0,
           'ratio' => 0,
-      ],
-      8 => [
+        ],
+        8 => [
           'name' => 'ร',
           'range_max' => 100,
           'range_min' => 0,
           'count' => 0,
           'ratio' => 0,
-      ],
-      9 => [
+        ],
+        9 => [
           'name' => 'มส',
           'range_max' => 100,
           'range_min' => 0,
           'count' => 7,
           'ratio' => 22.22,
-      ],
-      10 => [
+        ],
+        10 => [
           'name' => 'ขส.',
           'range_max' => 100,
           'range_min' => 0,
           'count' => 0,
           'ratio' => 0,
-      ],
-      11 => [
+        ],
+        11 => [
           'name' => 'ขร.',
           'range_max' => 100,
           'range_min' => 0,
           'count' => 0,
           'ratio' => 0,
-      ],
-      12 => [
+        ],
+        12 => [
           'name' => 'ท.',
           'range_max' => 100,
           'range_min' => 0,
           'count' => 0,
           'ratio' => 0,
+        ],
       ],
-    ],
-    'totalStudent' => 36,
-    'academicYear' => [
+      'totalStudent' => 36,
+      'academicYear' => [
         'name' => '2566',
-    ],
-    'semester' => [
-      'name' => 'ภาคเรียนที่ 2',
-    ],
-    'teachName' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
-    'teacherClass' => [
+      ],
+      'semester' => [
+        'name' => 'ภาคเรียนที่ 2',
+      ],
+      'teachName' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
+      'teacherClass' => [
         0 => [
-            'fullname' => 'นายธีระชัย เถลิงลาภ',
+          'fullname' => 'นายธีระชัย เถลิงลาภ',
         ],
         1 => [
-            'fullname' => 'นายพรพล เทพไทยอำนวย',
+          'fullname' => 'นายพรพล เทพไทยอำนวย',
         ],
-        ],
+      ],
     ];
   }
 
   private function dummyDataNikom_print_profile()
   {
     return [
-    'missing' => [
+      'missing' => [
         'edu_programChoice' => [
           0 => [
-            'edu_programName'=> 'แผนการเรียนภาษาเพื่อการสื่อสาร แผน ข (อังกฤษ-ญี่ปุ่น)',
+            'edu_programName' => 'แผนการเรียนภาษาเพื่อการสื่อสาร แผน ข (อังกฤษ-ญี่ปุ่น)',
           ],
           1 => [
-            'edu_programName'=> 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
+            'edu_programName' => 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
           ],
           2 => [
-            'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์เทคโนโลยีดิจิทัล',
+            'edu_programName' => 'แผนการเรียนวิทยาศาสตร์เทคโนโลยีดิจิทัล',
           ],
           3 => [
-            'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์พลังงานและสิ่งแวดล้อม',
+            'edu_programName' => 'แผนการเรียนวิทยาศาสตร์พลังงานและสิ่งแวดล้อม',
           ],
           4 => [
-            'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์วิศวกรรมศาสตร์',
+            'edu_programName' => 'แผนการเรียนวิทยาศาสตร์วิศวกรรมศาสตร์',
           ],
           5 => [
-            'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์สุขภาพ',
+            'edu_programName' => 'แผนการเรียนวิทยาศาสตร์สุขภาพ',
           ],
           6 => [
-            'edu_programName'=> '',
+            'edu_programName' => '',
           ],
           7 => [
-            'edu_programName'=> '', // in case there are more than 7 choices
+            'edu_programName' => '', // in case there are more than 7 choices
           ],
           8 => [
-            'edu_programName'=> '',
+            'edu_programName' => '',
           ],
           9 => [
-            'edu_programName'=> '',
+            'edu_programName' => '',
           ],
         ],
-        'image'=> '',
+        'image' => '',
         'dynamic_edu_program' => 5,
       ],
       'profile' => [
-          'gender' => 1,
-          'title' => 'น.ส.',
-          'firstname' => 'สุมลรัตน์',
-          'lastname' => 'ไขแจ้ง',
-          'mobile_no' => '0809652194',
-          'personal_id' => '1219901211901',
-          'race' => 'ไทย',
-          'nationality' => 'ไทย',
-          'religion' => 'พุทธ',
-          'dob' => '15 กันยายน 2551',
-          'height' => 162,
-          'weight' => 81,
-          'ageYear' => '15',
-          'ageMonth' => '6',
-          'blood' => 'O',
-          'email' => '13372@nikhomwit.ac.th',
-          'born' => '-',
-          'elderBrother' => '0',
-          'elderSister' => '0',
-          'youngerBrother' => '0',
-          'youngerSister' => '0',
-          'birthOrder' => 1,
-          'childInSchool' => '0',
-          'distance' => '5',
-          'travelDuration' => '9 นาที',
-          'travelCost' => '.',
-          'talent' => 'N/A',
-          'familyStatus' => 'บิดาถึงแก่กรรม',
-          'siblings' => 0,
+        'gender' => 1,
+        'title' => 'น.ส.',
+        'firstname' => 'สุมลรัตน์',
+        'lastname' => 'ไขแจ้ง',
+        'mobile_no' => '0809652194',
+        'personal_id' => '1219901211901',
+        'race' => 'ไทย',
+        'nationality' => 'ไทย',
+        'religion' => 'พุทธ',
+        'dob' => '15 กันยายน 2551',
+        'height' => 162,
+        'weight' => 81,
+        'ageYear' => '15',
+        'ageMonth' => '6',
+        'blood' => 'O',
+        'email' => '13372@nikhomwit.ac.th',
+        'born' => '-',
+        'elderBrother' => '0',
+        'elderSister' => '0',
+        'youngerBrother' => '0',
+        'youngerSister' => '0',
+        'birthOrder' => 1,
+        'childInSchool' => '0',
+        'distance' => '5',
+        'travelDuration' => '9 นาที',
+        'travelCost' => '.',
+        'talent' => 'N/A',
+        'familyStatus' => 'บิดาถึงแก่กรรม',
+        'siblings' => 0,
       ],
       'address' => [
-          'no' => '288/2',
-          'moo' => '1',
-          'soi' => '2',
-          'street' => '-',
-          'sub_district' => 'นิคมพัฒนา',
-          'district' => 'นิคมพัฒนา',
-          'province' => 'ระยอง',
-          'zip' => '21180',
+        'no' => '288/2',
+        'moo' => '1',
+        'soi' => '2',
+        'street' => '-',
+        'sub_district' => 'นิคมพัฒนา',
+        'district' => 'นิคมพัฒนา',
+        'province' => 'ระยอง',
+        'zip' => '21180',
       ],
       'dad' => [
-          'title' => 'นาย',
-          'f_name' => 'สุรชัย',
-          'l_name' => 'ไขแจ้ง',
-          'job' => 'ถึงแก่กรรม',
-          'phone' => '-',
-          'citizen' => '3640700385711',
-          'age' => 46,
-          'dob' => '23 กันยายน 2521',
-          'blood' => 'A',
-          'income' => '-',
-          'nationality' => 'ไทย',
-          'race' => 'ไทย',
-          'religion' => 'พุทธ',
+        'title' => 'นาย',
+        'f_name' => 'สุรชัย',
+        'l_name' => 'ไขแจ้ง',
+        'job' => 'ถึงแก่กรรม',
+        'phone' => '-',
+        'citizen' => '3640700385711',
+        'age' => 46,
+        'dob' => '23 กันยายน 2521',
+        'blood' => 'A',
+        'income' => '-',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
       ],
       'mom' => [
-          'title' => 'นางสาว',
-          'f_name' => 'มลฤดี',
-          'l_name' => 'ทับจันทร์',
-          'job' => 'รับราชการ',
-          'phone' => '0818631929',
-          'citizen' => '1210500078021',
-          'age' => 34,
-          'dob' => '28 สิงหาคม 2533',
-          'blood' => 'B',
-          'income' => '9,000',
-          'nationality' => 'ไทย',
-          'race' => 'ไทย',
-          'religion' => 'พุทธ',
+        'title' => 'นางสาว',
+        'f_name' => 'มลฤดี',
+        'l_name' => 'ทับจันทร์',
+        'job' => 'รับราชการ',
+        'phone' => '0818631929',
+        'citizen' => '1210500078021',
+        'age' => 34,
+        'dob' => '28 สิงหาคม 2533',
+        'blood' => 'B',
+        'income' => '9,000',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
       ],
       'parent' => [
-          'title' => 'นางสาว',
-          'firstname' => 'มลฤดี',
-          'lastname' => 'ทับจันทร์',
-          'age' => 34,
-          'job' => 'รับราชการ',
-          'phone' => '0818631929',
-          'citizen' => '1210500078021',
-          'blood' => 'B',
-          'income' => '9,000',
-          'nationality' => 'ไทย',
-          'race' => 'ไทย',
-          'religion' => '-',
+        'title' => 'นางสาว',
+        'firstname' => 'มลฤดี',
+        'lastname' => 'ทับจันทร์',
+        'age' => 34,
+        'job' => 'รับราชการ',
+        'phone' => '0818631929',
+        'citizen' => '1210500078021',
+        'blood' => 'B',
+        'income' => '9,000',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => '-',
       ],
       'old_school' => [
-          'name' => 'นิคมวิทยา',
-          'province' => 'ระยอง',
+        'name' => 'นิคมวิทยา',
+        'province' => 'ระยอง',
       ],
       'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
       'title' => [
-          'name' => 'นิคมวิทยา',
-          'grade' => 4,
-          'year' => 2567,
+        'name' => 'นิคมวิทยา',
+        'grade' => 4,
+        'year' => 2567,
       ],
       'model' => [
-              'transport' => 3,
+        'transport' => 3,
       ],
     ];
   }
@@ -1136,166 +1136,167 @@ public function actionExamidcard()
   private function dummyDataBanbueng_staff_attendance()
   {
     return [
-    'teacherCivilServant'=> [
-      'totalStaff' => 150,
-      'onDutyService' => 0,
-      'sickLeave'=> 1,
-      'personalLeave'=> 0,
-      'late'=> 0,
-      'other'=> 0,
-      'totalPresent'=> 149,
-    ],
-    'permanentStaff'=> [
-      'totalStaff' => 1,
-      'onDutyService' => 0,
-      'sickLeave'=> 0,
-      'personalLeave'=> 0,
-      'late'=> 0,
-      'other'=> 0,
-      'totalPresent'=> 1,
+      'teacherCivilServant' => [
+        'totalStaff' => 150,
+        'onDutyService' => 0,
+        'sickLeave' => 1,
+        'personalLeave' => 0,
+        'late' => 0,
+        'other' => 0,
+        'totalPresent' => 149,
       ],
-    'contractTeacher'=> [
-      'totalStaff' => 2,
-      'onDutyService' => 0,
-      'sickLeave'=> 0,
-      'personalLeave'=> 0,
-      'late'=> 0,
-      'other'=> 0,
-      'totalPresent'=> 2,
+      'permanentStaff' => [
+        'totalStaff' => 1,
+        'onDutyService' => 0,
+        'sickLeave' => 0,
+        'personalLeave' => 0,
+        'late' => 0,
+        'other' => 0,
+        'totalPresent' => 1,
       ],
-    'temporaryStaff'=> [
-      'totalStaff' => 24,
-      'onDutyService' => 0,
-      'sickLeave'=> 0,
-      'personalLeave'=> 0,
-      'late'=> 0,
-      'other'=> 1,
-      'totalPresent'=> 23,
+      'contractTeacher' => [
+        'totalStaff' => 2,
+        'onDutyService' => 0,
+        'sickLeave' => 0,
+        'personalLeave' => 0,
+        'late' => 0,
+        'other' => 0,
+        'totalPresent' => 2,
       ],
-    'User'=> [
-      0 => [
-        'emp_position'=> 'ผู้อำนวยการ',
-        'title'=> 'นาย',
-        'firstname'=> 'เอกบรรจง',
-        'lastname'=> 'บุญผ่อง',
+      'temporaryStaff' => [
+        'totalStaff' => 24,
+        'onDutyService' => 0,
+        'sickLeave' => 0,
+        'personalLeave' => 0,
+        'late' => 0,
+        'other' => 1,
+        'totalPresent' => 23,
       ],
-      1 => [
-        'emp_position'=> 'รองผู้อำนวยการสถานศึกษา',
-        'title'=> 'นาง',
-        'firstname'=> 'นันท์ดาวินทร์',
-        'lastname'=> 'หาญมนตรี',
+      'User' => [
+        0 => [
+          'emp_position' => 'ผู้อำนวยการ',
+          'title' => 'นาย',
+          'firstname' => 'เอกบรรจง',
+          'lastname' => 'บุญผ่อง',
+        ],
+        1 => [
+          'emp_position' => 'รองผู้อำนวยการสถานศึกษา',
+          'title' => 'นาง',
+          'firstname' => 'นันท์ดาวินทร์',
+          'lastname' => 'หาญมนตรี',
+        ],
       ],
-    ],
-    'teacherCivilServantListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'other'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-    ],
-    'permanentStaffListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'other'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-    ],
-    'contractTeacherListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'other'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-    ],
-    'temporaryStaffListName'=> [
-      'onDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'sickLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'personalLeave'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'late'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'other'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-      'helpDutyService'=> ['ตัวอย่าง A','ตัวอย่าง B'],
-    ],
-    'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
-    'title' => [
-      'name' => 'โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"',
-    ],
-      ];
+      'teacherCivilServantListName' => [
+        'onDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'sickLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'personalLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'late' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'other' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'helpDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+      ],
+      'permanentStaffListName' => [
+        'onDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'sickLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'personalLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'late' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'other' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'helpDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+      ],
+      'contractTeacherListName' => [
+        'onDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'sickLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'personalLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'late' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'other' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'helpDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+      ],
+      'temporaryStaffListName' => [
+        'onDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'sickLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'personalLeave' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'late' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'other' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+        'helpDutyService' => ['ตัวอย่าง A', 'ตัวอย่าง B'],
+      ],
+      'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
+      'title' => [
+        'name' => 'โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"',
+      ],
+    ];
   }
 
   private function dummyDataSiyanuson_student_behave()
   {
-        return [
-          'missing' => [
-            'teamColor' => 'แดง',
-            'kor' => 'ก.22'
+    $behaveList = [
+      [
+        'inform_id' => 235599,
+        'created_at' => '2024-02-09 12:00:00',
+        'behave_point' => '-15.00',
+        'behave_id' => '570',
+        'type' => 0,
+        'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
+        'informer' => 111,
+        'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
+      ],
+      [
+        'inform_id' => 239776,
+        'created_at' => '2024-02-16 12:00:00',
+        'behave_point' => '-15.00',
+        'behave_id' => '570',
+        'type' => 0,
+        'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
+        'informer' => 111,
+        'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
+      ],
+    ];
+    return [
+      'missing' => [
+        'teamColor' => 'แดง',
+        'docNo' => 'ก.22'
+      ],
+      'profile' => [
+        'code' => '24349',
+        'order_number' => null,
+        'mobile_no' => '0951464146',
+        'fullname' => 'นาย ฟ้าประทาน หยกพิริยกุล',
+        'classname' => 'มัธยมศึกษาปีที่ 6/1',
+      ],
+      'address' => [
+        'no' => '67 หมู่ 6 ซอย4 ถนนเฉลิมพระเกียรติร.๙',
+        'sub_district' => 'หนองบอน',
+        'district' => 'ประเวศ',
+        'province' => 'กรุงเทพมหานคร',
+        'zip' => 10250,
+      ],
+      'dad' => [
+        'fullname' => '',
+      ],
+      'mom' => [
+        'fullname' => 'นาง อังศุมาลิน อังศุมาศ',
+      ],
+      'parent' => [
+        'fullname' => '',
+      ],
+      'img' => 'https://app.nextschool.io/img/logo/1447986866SRT_logo.jpg',
+      'title' => [
+        'name' => 'โรงเรียนสิริรัตนาธร จังหวัดกรุงเทพมหานคร',
+        'behave_init_point' => 100,
+      ],
+      'teacherClass' => [
+        0 => [
+          'teacherClassSinceYear' => '2564',
+          'fullname' => 'นาย สหรัฐ ยกย่อง',
         ],
-        'profile' => [
-            'code' => '24349',
-            'order_number' => null,
-            'mobile_no' => '0951464146',
-            'fullname' => 'นาย ฟ้าประทาน หยกพิริยกุล',
-            'classname' => 'มัธยมศึกษาปีที่ 6/1',
+        1 => [
+          'teacherClassSinceYear' => '2565',
+          'fullname' => 'นาย จอม  โสสว่าง, นางสาว นฤมล จันทะนาม',
         ],
-        'address' => [
-            'no' => '67 หมู่ 6 ซอย4 ถนนเฉลิมพระเกียรติร.๙',
-            'sub_district' => 'หนองบอน',
-            'district' => 'ประเวศ',
-            'province' => 'กรุงเทพมหานคร',
-            'zip' => 10250,
+        2 => [
+          'teacherClassSinceYear' => '2566',
+          'fullname' => 'นางสาว Sarah Layne Geronilla, นางสาว รุจิภา บุญศรี',
         ],
-        'dad' => [
-            'fullname' => '',
-        ],
-        'mom' => [
-            'fullname' => 'นาง อังศุมาลิน อังศุมาศ',
-        ],
-        'parent' => [
-            'fullname' => '',
-        ],
-        'img' => 'https://app.nextschool.io/img/logo/1447986866SRT_logo.jpg',
-        'title' => [
-            'name' => 'โรงเรียนสิริรัตนาธร จังหวัดกรุงเทพมหานคร',
-            'behave_init_point' => 100,
-        ],
-        'teacherClass' => [
-            0 => [
-                'teacherClassSinceYear' => '2564',
-                'fullname' => 'นาย สหรัฐ ยกย่อง',
-            ],
-            1 => [
-                'teacherClassSinceYear' => '2565',
-                'fullname' => 'นาย จอม  โสสว่าง, นางสาว นฤมล จันทะนาม',
-            ],
-            2 => [
-                'teacherClassSinceYear' => '2566',
-                'fullname' => 'นางสาว Sarah Layne Geronilla, นางสาว รุจิภา บุญศรี',
-            ],
-        ],
-        'behave' => [
-            0 => [
-                'inform_id' => 235599,
-                'created_at' => '2024-02-09 12:00:00',
-                'behave_point' => '-15.00',
-                'behave_id' => '570',
-                'type' => 0,
-                'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
-                'informer' => 111,
-                'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
-            ],
-            1 => [
-                'inform_id' => 239776,
-                'created_at' => '2024-02-16 12:00:00',
-                'behave_point' => '-15.00',
-                'behave_id' => '570',
-                'type' => 0,
-                'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
-                'informer' => 111,
-                'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
-            ],
-        ],
-      ];
+      ],
+      'behave' => [...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList, ...$behaveList],
+    ];
   }
 }
