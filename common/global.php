@@ -7,3 +7,8 @@ function citizenWithSpaceGlobal($citizen, $spacer)
   }
   return $citizen;
 }
+
+function nullAble($value, $default)
+{
+  return $value ?? $default;
+}
