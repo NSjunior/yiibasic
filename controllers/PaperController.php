@@ -1228,86 +1228,74 @@ public function actionExamidcard()
   private function dummyDataSiyanuson_student_behave()
   {
         return [
-      'missing'=> [
-        'teamColor'=> 'แดง',
-      ],
-    'profile' => [
-        'code' => 27761,
-        'order_number' => 10,
-        'mobile_no' => '0809652194',
-        'fullname' => 'น.ส. สุมลรัตน์ ไขแจ้ง',
-    ],
-    'address' => [
-        'no' => '288/2',
-        'moo' => '1',
-        'soi' => '2',
-        'street' => '-',
-        'sub_district' => 'นิคมพัฒนา',
-        'district' => 'นิคมพัฒนา',
-        'province' => 'ระยอง',
-        'zip' => '21180',
-    ],
-    'dad' => [
-        'fullname' => 'นาย สุรชัย ไขแจ้ง',
-    ],
-    'mom' => [
-        'fullname' => 'นางสาว มลฤดี ทับจันทร์',
-    ],
-    'parent' => [
-        'fullname' => 'นางสาว มลฤดี ทับจันทร์',
-    ],
-    'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
-    'title' => [
-        'name' => 'โรงเรียนศรียานุสรณ์ จังหวัดจันทบุรี',
-        'grade' => 4,
-        'year' => 2567,
-    ],
+          'missing' => [
+            'teamColor' => 'แดง',
+            'kor' => 'ก.22'
+        ],
+        'profile' => [
+            'code' => '24349',
+            'order_number' => null,
+            'mobile_no' => '0951464146',
+            'fullname' => 'นาย ฟ้าประทาน หยกพิริยกุล',
+            'classname' => 'มัธยมศึกษาปีที่ 6/1',
+        ],
+        'address' => [
+            'no' => '67 หมู่ 6 ซอย4 ถนนเฉลิมพระเกียรติร.๙',
+            'sub_district' => 'หนองบอน',
+            'district' => 'ประเวศ',
+            'province' => 'กรุงเทพมหานคร',
+            'zip' => 10250,
+        ],
+        'dad' => [
+            'fullname' => '',
+        ],
+        'mom' => [
+            'fullname' => 'นาง อังศุมาลิน อังศุมาศ',
+        ],
+        'parent' => [
+            'fullname' => '',
+        ],
+        'img' => 'https://app.nextschool.io/img/logo/1447986866SRT_logo.jpg',
+        'title' => [
+            'name' => 'โรงเรียนสิริรัตนาธร จังหวัดกรุงเทพมหานคร',
+            'behave_init_point' => 100,
+        ],
         'teacherClass' => [
-          0 => [
-            'teacherClassSinceYear'=> '2565',
-            'fullname' => 'นายธีระชัย เถลิงลาภ',
-          ],
-          1 => [
-            'teacherClassSinceYear'=> '2566',
-            'fullname' => 'นายพรพล เทพไทยอำนวย',
-          ],
-          2 => [
-            'teacherClassSinceYear'=> '2567',
-            'fullname' => 'นายพรพล เทพไทยอำนวย',
-          ],
-          ],
-      'model' => [
-        'name' => 'ม.6/6',
-      ],
-      'behave' => [
-        0 => [
-        'created_at' => '2024-02-10 11:14:51',
-        'title' => '210ไม่บันทึกเวลามาโรงเรียน',
-        'point' => -15.00,
-        'progress' => 'ตัดคะแนน',
-        'handler' => 'นาย A',
-        'total_point' => 85.00,
-        'remark' => '1',
-      ],
-      1 => [
-        'created_at' => '2024-02-11 12:14:51',
-        'title' => '210ไม่บันทึกเวลามาโรงเรียน',
-        'point' => -15.00,
-        'progress' => 'เชิญผู้ปกครอง',
-        'handler' => 'นาย B',
-        'total_point' => 70.00,
-        'remark' => '2',
-      ],
-      2 => [
-        'created_at' => '2024-02-12 13:14:51',
-        'title' => '210ไม่บันทึกเวลามาโรงเรียน',
-        'point' => -15.00,
-        'progress' => 'ทำหนังสือยินยอม',
-        'handler' => 'นาย C',
-        'total_point' => 55.00,
-        'remark' => '3',
-      ],
-    ],
+            0 => [
+                'teacherClassSinceYear' => '2564',
+                'fullname' => 'นาย สหรัฐ ยกย่อง',
+            ],
+            1 => [
+                'teacherClassSinceYear' => '2565',
+                'fullname' => 'นาย จอม  โสสว่าง, นางสาว นฤมล จันทะนาม',
+            ],
+            2 => [
+                'teacherClassSinceYear' => '2566',
+                'fullname' => 'นางสาว Sarah Layne Geronilla, นางสาว รุจิภา บุญศรี',
+            ],
+        ],
+        'behave' => [
+            0 => [
+                'inform_id' => 235599,
+                'created_at' => '2024-02-09 12:00:00',
+                'behave_point' => '-15.00',
+                'behave_id' => '570',
+                'type' => 0,
+                'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
+                'informer' => 111,
+                'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
+            ],
+            1 => [
+                'inform_id' => 239776,
+                'created_at' => '2024-02-16 12:00:00',
+                'behave_point' => '-15.00',
+                'behave_id' => '570',
+                'type' => 0,
+                'title' => '210ไม่บันทึกเวลาการมาโรงเรียน',
+                'informer' => 111,
+                'informer_name' => 'กลุ่มบริหารงานบุคคล งานกิจการนักเรียน',
+            ],
+        ],
       ];
   }
 }
