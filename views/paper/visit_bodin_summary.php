@@ -38,10 +38,10 @@ $modelname2 = $parts[1]; // 6/6
 <div style="margin-left:45px;">
 <dl>
     <dt style="width:200px;">ได้ออกเยี่ยมบ้านแล้ว จำนวนทั้งสิ้น</dt>
-    <dd style="width:60px;"><?php echo $totalVisitStudent ?></dd>
+    <dd style="width:60px;"><?php echo $missing['totalVisitStudent'] ?></dd>
     <dt style="width:30px;">คน</dt>
     <dt style="width:105px;">ไม่ได้เยี่ยมจำนวน</dt>
-    <dd style="width:80px;"><?php echo $totalNonVisitStudent ?></dd>
+    <dd style="width:80px;"><?php echo $missing['totalNonVisitStudent'] ?></dd>
     <dt style="width:30px;">คน</dt>
 </dl>
 <p style="padding-top:5px;">1. สภาพแวดล้อมที่อยู่อาศัย</p>

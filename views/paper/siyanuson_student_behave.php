@@ -21,9 +21,9 @@ foreach ($dataChunks as $index => $chunk) {
 <div style="font-size:18pt;float:right;width:19%;text-align:right;padding-top:-40px;">
 <dl>
 <dt style="width:50px;font-weight:bold;">เลขที่</dt>
-    <dd style="width:140px;"><?php echo empty($missing['studentNo']) ? "&nbsp;" : $missing['studentNo'] ?></dd>
+    <dd style="width:140px;"><?php echo empty($profile['order_number']) ? "&nbsp;" : $profile['order_number'] ?></dd>
     <dt style="width:100px;font-weight:bold;padding-left:-20px;">รหัสประจำตัว</dt>
-    <dd style="width:110px;"><?php echo empty($profile['regis_id']) ? "&nbsp;" : $profile['regis_id'] ?></dd>
+    <dd style="width:110px;"><?php echo empty($profile['code']) ? "&nbsp;" : $profile['code'] ?></dd>
 </dl>
 </div>
 <br/>
@@ -31,7 +31,7 @@ foreach ($dataChunks as $index => $chunk) {
 <dl>
 <dt style="width:45px;">คณะสี</dt>
     <dd style="width:80px;"><?php echo empty($missing['teamColor']) ? "&nbsp;" : $missing['teamColor'] ?></dd>
-    <p style="font-size:18pt;font-weight:bold;padding-left:300px;padding-top:4px;">บันทึกพฤติกรรมนักเรียน โรงเรียนศรียานุสรณ์ จังหวัดจันทบุรี</p>
+    <p style="font-size:18pt;font-weight:bold;padding-left:300px;padding-top:4px;">บันทึกพฤติกรรมนักเรียน <?php echo $title['name'] ?></p>
 </dl>
 </div>
 <p style="text-align:right;padding-top:-30px;">ก.22</p>
@@ -47,7 +47,7 @@ foreach ($dataChunks as $index => $chunk) {
     <dt style="width:30px;">หมู่ที่</dt>
     <dd style="width:90px;"><?php echo empty($address['moo']) ? "&nbsp;" : $address['moo'] ?></dd>
     <dt style="width:60px;">ถนน/ซอย</dt>
-    <dd style="width:250px;"><?php echo empty($address['street']) ? "&nbsp;" : $address['street'] ?>&nbsp;/&nbsp;<?php echo empty($address['soi']) ? "&nbsp;" : $address['soi']?></dd>
+    <dd style="width:250px;"><?php echo empty($address['street']) ? "&nbsp;" : $address['street'] ?>&nbsp;<?php echo empty($address['soi']) ? "&nbsp;" : $address['soi']?></dd>
     <dt style="width:35px;">ตำบล</dt>
     <dd style="width:172px;"><?php echo empty($address['sub_district']) ? "&nbsp;" : $address['sub_district'] ?></dd>
     <dt style="width:40px;">อำเภอ</dt>
